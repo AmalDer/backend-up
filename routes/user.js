@@ -6,7 +6,7 @@ var database = require('../database');
 
 router.get("/", function(request, response, next){
 
-	var query = "SELECT * FROM student ORDER BY idstudent ASC";
+	var query = "SELECT * FROM user ORDER BY id DESC";
 
 	database.query(query, function(error, data){
 
@@ -16,8 +16,7 @@ router.get("/", function(request, response, next){
 		}
 		else
 		{
-			response.send(data);
-			// response.render('student', {title:'Node.js MySQL CRUD Application', action:'listStudent', studentData:data});
+			response.render('user', {title:'Node.js MySQL CRUD Application', action:'list', userData:data});
 		}
 
 	});
@@ -25,9 +24,9 @@ router.get("/", function(request, response, next){
 });
 
 //to add the group created to the database
-router.get("/addStudent", function(request, response, next){
+router.get("/add", function(request, response, next){
 
-	response.render("student", {title:'Insert Data into MySQL', action:'add'});
+	response.render("user", {title:'Insert Data into MySQL', action:'add'});
 
 });
 

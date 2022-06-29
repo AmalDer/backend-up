@@ -6,7 +6,7 @@ var database = require('../database');
 
 router.get("/", function(request, response, next){
 
-	var query = "SELECT * FROM group ORDER BY id DESC";
+	var query = "SELECT * FROM group ORDER BY idgroup DESC";
 
 	database.query(query, function(error, data){
 
