@@ -16,7 +16,8 @@ router.get("/", function(request, response, next){
 		}
 		else
 		{
-			response.render('student', {title:'Node.js MySQL CRUD Application', action:'list', studentData:data});
+			response.send(data);
+			// response.render('student', {title:'Node.js MySQL CRUD Application', action:'listStudent', studentData:data});
 		}
 
 	});
@@ -24,9 +25,9 @@ router.get("/", function(request, response, next){
 });
 
 //to add the group created to the database
-router.get("/add", function(request, response, next){
+router.get("/addStudent", function(request, response, next){
 
-	response.render("group", {title:'Insert Data into MySQL', action:'add'});
+	response.render("group", {title:'Insert Data into MySQL', action:'addstudent'});
 
 });
 

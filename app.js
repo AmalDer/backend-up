@@ -7,15 +7,22 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
-var sampledataRouter = require('./routes/student');
+var studentRouter = require('./routes/student');
+var groupRouterG = require('./routes/group');
 
 var app = express();
+
+const PORT = 4000; //backend routing port
+app.listen(PORT, () => {
+  console.log('running on port 4000');
+})
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.use('/student', sampledataRouter);
+app.use('/student', studentRouter);
+app.use('/group',groupRouterG);
 
 app.use(logger('dev'));
 app.use(express.json());
