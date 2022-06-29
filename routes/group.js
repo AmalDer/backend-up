@@ -16,7 +16,7 @@ router.get("/", function(request, response, next){
 		}
 		else
 		{
-			response.render('group', {title:'Node.js MySQL CRUD Application', action:'list', sampleData:data});
+			response.render('group', {title:'Node.js MySQL CRUD Application', action:'list', groupData:data});
 		}
 
 	});

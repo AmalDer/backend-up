@@ -21,7 +21,7 @@
             <div class="card">
                 <div class="card-header">
                     <div class="row">
-                        <div class="col">Groups</div>
+                        <div class="col">Groups Lists</div>
                         <div class="col"></div>
                     </div>
                 </div>
@@ -33,9 +33,9 @@
                                 <th>Group Name</th>
                             </tr>
                             <%
-                            if(group.length > 0)
+                            if(groupData.length > 0)
                             {
-                                group.forEach(function(data){
+                                groupData.forEach(function(data){
                             %>
                             <tr>
                                 <td><%= data.idgroup %></td>

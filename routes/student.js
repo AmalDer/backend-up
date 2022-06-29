@@ -16,10 +16,17 @@ router.get("/", function(request, response, next){
 		}
 		else
 		{
-			response.render('student', {title:'Node.js MySQL CRUD Application', action:'list', sampleData:data});
+			response.render('student', {title:'Node.js MySQL CRUD Application', action:'list', studentData:data});
 		}
 
 	});
+
+});
+
+//to add the group created to the database
+router.get("/add", function(request, response, next){
+
+	response.render("group", {title:'Insert Data into MySQL', action:'add'});
 
 });
 
